@@ -1,8 +1,8 @@
 /* Reset básico */
 * {
-    margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-align: center;
 }
 
 /* Estilo general del body */
@@ -33,7 +33,7 @@ h1, h2 {
 form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 0px;
 }
 
 label {
@@ -45,6 +45,7 @@ input, select, button {
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    margin: -10px;
 }
 
 button {
@@ -53,6 +54,7 @@ button {
     border: none;
     cursor: pointer;
 }
+
 
 button:hover {
     background-color: #0056b3;
@@ -73,6 +75,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 th, td {
@@ -92,7 +95,7 @@ th {
     color: #155724;
     padding: 10px;
     border-radius: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 .error {
@@ -100,7 +103,7 @@ th {
     color: #721c24;
     padding: 10px;
     border-radius: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 /* Responsivo para móvil */
