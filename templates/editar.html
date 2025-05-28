@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Vehículo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+<body>
+    <h1>Editar vehículo: {{ vehiculo[0] }}</h1>
+    <form method="POST">
+        <label for="tipo">Tipo:</label>
+        <select name="tipo" required>
+            <option value="Carro" {% if vehiculo[1] == 'Carro' %}selected{% endif %}>Carro</option>
+            <option value="Moto" {% if vehiculo[1] == 'Moto' %}selected{% endif %}>Moto</option>
+        </select><br>
+
+        <label for="nombres">Nombres:</label>
+        <input type="text" name="nombres" value="{{ vehiculo[2] }}" required><br>
+
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" name="apellidos" value="{{ vehiculo[3] }}" required><br>
+
+        <label for="cedula">Cédula:</label>
+        <input type="text" name="cedula" value="{{ vehiculo[4] }}" required><br>
+
+        <label for="celular">Celular:</label>
+        <input type="text" name="celular" value="{{ vehiculo[5] }}" required><br>
+
+        <button type="submit">Actualizar</button>
+        <a href="/vehiculos">Cancelar</a>
+    </form>
+</body>
+</html>
