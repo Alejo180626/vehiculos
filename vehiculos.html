@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Vehículos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+<body>
+    <h1>Vehículos Registrados</h1>
+    <table border="1">
+        <tr>
+            <th>Placa</th>
+            <th>Tipo</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Cédula</th>
+            <th>Celular</th>
+            <th>Acciones</th>
+        </tr>
+        {% for v in vehiculos %}
+        <tr>
+            <td>{{ v[0] }}</td>
+            <td>{{ v[1] }}</td>
+            <td>{{ v[2] }}</td>
+            <td>{{ v[3] }}</td>
+            <td>{{ v[4] }}</td>
+            <td>{{ v[5] }}</td>
+            <td>
+                <a href="/editar/{{ v[0] }}">Editar</a> |
+                <a href="/eliminar/{{ v[0] }}" onclick="return confirm('¿Estás seguro de eliminar este vehículo?');">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">Volver al inicio</a>
+</body>
+</html>
